@@ -1,0 +1,22 @@
+"Updater"
+{
+	"Information"
+	{
+		"Version"
+		{
+			"Latest"	"1.0"
+		}
+		
+		"Notes"	"Changelog:"
+		"Notes"	"Release"
+	}
+	
+	"Files"
+	{
+		"Plugin"	"Path_SM/plugins/CAuth.smx"
+		"Plugin"	"Path_SM/translations/CTAuth.phrases.txt"
+		"Plugin"	"Path_SM/translations/de/CTAuth.phrases.txt"
+		
+		"Source"	"Path_SM/scripting/CTAuth.sp"
+	}
+}
