@@ -4,11 +4,12 @@
 	{
 		"Version"
 		{
-			"Latest"	"1.0.1"
+			"Latest"	"1.0.2"
 		}
 		
 		"Notes"	"Changelog:"
-		"Notes"	"Fixed Translation"
+		"Notes"	"Fixed Bug with Autojoin"
+		"Notes"	"Added Center-Text Notification"
 	}
 	
 	"Files"
