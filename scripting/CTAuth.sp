@@ -1,5 +1,5 @@
 #include <sourcemod>
-#include <morecolors>
+#include <multicolors>
 #include <stamm>
 #undef REQUIRE_PLUGIN
 #include <updater>
@@ -11,7 +11,7 @@ public Plugin:myinfo =
 	name = "CT Auth",
 	author = "Toast",
 	description = "Adds the option to restrict CT Team by Stamm Points",
-	version = "1.0.2",
+	version = "1.0.3",
 	url = "bitbucket.org/Toastbrot_290"
 }
 
