@@ -1,0 +1,31 @@
+﻿"Phrases"
+{
+	"prefix"
+	{
+		"en"		"{fullred}[CTAuth]"
+		"de"		"{fullred}[CTAuth]"
+	}
+	"prefix_plain"
+	{
+		"en"		"[CTAuth]"
+		"de"		"[CTAuth]"
+	}
+	"error_not_enough_points"
+	{
+		"#format"	"{1:i},{2:i},{3:i}"
+		"en"		"{lavender}You cant join CT Team! You still need {blue}{3}{lavender} points!"
+		"de"		"{lavender}Du kannst dem CT Team nicht beitreten! Du brauchst noch {blue}{3}{lavender} Stamm Punkte!"
+	}
+	"error_not_enough_points_plain"
+	{
+		"#format"	"{1:i},{2:i},{3:i}"
+		"en"		"You cant join CT Team! You still need {3} points!"
+		"de"		"Du kannst dem CT Team nicht beitreten! Du brauchst noch {3} Stamm Punkte!"
+	}
+	"error_not_enough_points_all"
+	{
+		"#format"	"{1:s}"
+		"en"		"{lavender}{blue}{1} {lavender} tried to join CT Team, but he has not enough Stamm points!"
+		"de"		"{lavender}{blue}{1} {lavender} hat zu wenig Stamm Punkte um dem CT Team beizutreten!"
+	}
+}
