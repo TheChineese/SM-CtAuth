@@ -6,11 +6,16 @@ addons:
 
 env: 
   global:
-    - INCLUDEGIT=https://github.com/TheChineese/SM-Includes-Custom.git # Git repo for custom includes
-    - INCLUDE=addons/sourcemod/scripting/include/ # include dir for includes in project repo
-    - SCRIPTING=addons/sourcemod/scripting/ # where is your sourcecode located
-    - PLUGINS=addons/sourcemod/plugins/ # dir for compiled plugins
-    - HOME=ftp.toastdev.de/plugins # where to deploy
+    # Git repo for custom includes
+    - INCLUDEGIT=https://github.com/TheChineese/SM-Includes-Custom.git
+    # include dir for includes in project repo
+    - INCLUDE=addons/sourcemod/scripting/include/
+    # where is your sourcecode located
+    - SCRIPTING=addons/sourcemod/scripting/
+    # dir for compiled plugins
+    - PLUGINS=addons/sourcemod/plugins/
+    # where to deploy
+    - HOME=ftp.toastdev.de/plugins
   matrix:
     - SOURCEMOD=1.7.1
     - SOURCEMOD=1.7.2
