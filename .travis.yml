@@ -1,0 +1,47 @@
+sudo: false
+
+addons:
+    apt_packages:
+        - lib32stdc++6
+
+env: 
+  global:
+    - INCLUDEGIT=https://github.com/TheChineese/SM-Includes-Custom.git # Git repo for custom includes
+    - INCLUDE=addons/sourcemod/scripting/include/ # include dir for includes in project repo
+    - SCRIPTING=addons/sourcemod/scripting/ # where is your sourcecode located
+    - PLUGINS=addons/sourcemod/plugins/ # dir for compiled plugins
+    - HOME=ftp.toastdev.de/plugins # where to deploy
+  matrix:
+    - SOURCEMOD=1.7.1
+    - SOURCEMOD=1.7.2
+
+before_install:
+  - mkdir build-env
+  - mkdir includedir
+
+install:
+  - cd build-env
+  - wget http://sourcemod.gameconnect.net/files/sourcemod-$SOURCEMOD-linux.tar.gz
+  - tar -xzvf sourcemod-$SOURCEMOD-linux.tar.gz
+  - cd ..
+  - cd includedir
+  - git clone $INCLUDEGIT
+  - cd ..
+  - find build-env/addons/sourcemod/scripting/ -name "*.sp" -type f -delete
+  - cp -rv $SCRIPTING/. build-env/addons/sourcemod/scripting/
+  - cp -rv includedir/. build-env/addons/sourcemod/scripting/include/
+  - cp -rv $INCLUDE/. build-env/addons/sourcemod/scripting/include/
+
+before_script:
+  - chmod +rx build-env/addons/sourcemod/scripting/spcomp
+  - chmod +rx build-env/addons/sourcemod/scripting/compile.sh
+  - cd build-env/addons/sourcemod/scripting/
+  
+script:
+  - ./compile.sh
+  
+after_success:
+  - cd ../../../..
+  - cp -rv build-env/addons/sourcemod/scripting/compiled/. $PLUGINS
+  - cd $PLUGINS
+  - find . -type f -exec curl --user $FTPUSER:$FTPPASS --ftp-create-dirs -T {} ftp://$HOME/$SOURCEMOD/{} \;
